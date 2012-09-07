@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ post.title }} - Leon Young
+{% endblock %}
+
+{% block content %}
+    <div class="entry">
+        <h2>{{ post.title }}</h2>
+        <div class="description">
+            <p>Posted on {{ post.pub_date|date:"Y-m-d H:i" }}
+            <span style="padding-left: 50px">Category:{{ post.category }}</span>
+            <span style="padding-left: 100px">Tags:
+                {% for t in post.tags.all %}
+                    <a href="#">{{ t }}</a> |
+                {% endfor %}
+            </span>
+            </p>
+        </div>
+        <div class="text">
+            {{ post.content }}
+        </div>
+    </div>
+{% endblock %}
