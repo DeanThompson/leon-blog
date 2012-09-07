@@ -12,6 +12,15 @@ def post(request, year, month, slug):
     c = RequestContext(request, locals())
     return HttpResponse(t.render(c))
 
+
+def blogs(request):
+    posts_list = Blog.objects.all()
+
+    t = get_template('blog/blogs.html')
+    c = RequestContext(request, locals())
+    return HttpResponse(t.render(c))
+
+
 def about(request):
     t = get_template('blog/about.html')
     c = RequestContext(request, locals())

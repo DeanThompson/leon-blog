@@ -5,6 +5,7 @@
 
 a {
     text-decoration: none;
+    color: #3F72D8;
 }
 
 a:hover {
@@ -21,6 +22,9 @@ body {
     padding-bottom: 10px;
 }
 
+.header-container a {
+    color: #333333;
+}
 .header {
     height: 50px;
     padding: 5px 0;
@@ -33,10 +37,6 @@ body {
     float: left;
 }
 
-.header a {
-    color: #000000;
-}
-
 .header a:hover {
     text-decoration: none;
     color: #90ee90;
@@ -44,7 +44,7 @@ body {
 
 .header span {
     float: right;
-    margin-top: 20px;
+    margin-top: 30px;
     margin-right: 100px;
 }
 
@@ -59,6 +59,10 @@ body {
 .header, .nav, .container {
     width: 960px;
     margin: auto;
+}
+
+.page a:hover {
+    background-color: yellow;
 }
 
 .container {
@@ -78,6 +82,17 @@ body {
 
 .description {
     margin: 5px 0;
+    font-size: 0.9em;
+}
+
+.description .blog-pub-time {
+    float: left;
+    width: 200px;
+}
+
+.description .blog-category {
+    float: left;
+    width: 200px;
 }
 
 .side {
@@ -87,6 +102,16 @@ body {
 
 .items {
     margin-bottom: 20px;
+}
+
+.items h3 {
+    border-bottom: 1px double #000000;
+}
+
+.blog-intro {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px dotted #000000;
 }
 
 .footer {
