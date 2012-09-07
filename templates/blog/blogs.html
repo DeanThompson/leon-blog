@@ -9,8 +9,17 @@
         <ul>
             {% for post in posts_list %}
                 <li>
-                    <a href="{{ post.get_absolute_url }}" title="{{ post }}">{{ post }}</a>
-                    ({{ post.pub_date|date:'Y-m-d' }})
+                    <span style="float:left; width: 350px;">
+                        <a href="{{ post.get_absolute_url }}" title="{{ post }}">
+                            {{ post|truncatechars:"20" }}
+                        </a>
+                    </span>
+                    <span style="float:left; padding-left: 60px;">
+                        分类: <a href="#">{{ post.category }}</a>
+                    </span>
+                    <span style="float:right;">
+                        {{ post.pub_date|date:'Y-m-d' }}
+                    </span>
                 </li>
             {% endfor %}
         </ul>

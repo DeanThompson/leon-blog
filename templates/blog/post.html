@@ -17,11 +17,11 @@
                     </span>
         </div>
         <div class="text">
-            {{ post.content }}
+            {{ post.content|linebreaks }}
         </div>
         <br />
         <div class="perm-link">
-            转载请标明出处，本文永久链接: <a href="http://{{ post_link }}">{{ post_link }}</a>.
+            转载请标明出处，本文永久链接: <a href="http://{{ post_link }}">{{ post_link }}</a>
         </div>
     </div>
 {% endblock %}

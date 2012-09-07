@@ -33,8 +33,9 @@ body {
 .header h1 {
     font-size: 2.5em;
     font-weight: bold;
-    width: 300px;
-    float: left;
+    text-align: center;
+    /*width: 300px;*/
+    /*float: left;*/
 }
 
 .header a:hover {
@@ -44,8 +45,8 @@ body {
 
 .header span {
     float: right;
-    margin-top: 30px;
-    margin-right: 100px;
+    margin-top: 10px;
+    /*margin-right: 100px;*/
 }
 
 .nav {
@@ -76,16 +77,20 @@ body {
     float: left;
 }
 
-.entry h2 {
-    margin-bottom: 10px;
-}
-
 .entry {
     margin-bottom: 20px;
 }
 
+.entry h2 {
+    margin-bottom: 10px;
+}
+
+.entry .perm-link {
+    font-weight: bold;
+}
+
 .description {
-    margin: 5px 0;
+    margin: 5px 0 10px 0;
     font-size: 0.9em;
 }
 
@@ -96,7 +101,7 @@ body {
 
 .description .blog-category {
     float: left;
-    width: 200px;
+    width: 250px;
 }
 
 .side {
@@ -113,15 +118,19 @@ body {
 }
 
 .blog-intro {
-    padding-bottom: 10px;
+    padding-bottom: 20px;
     margin-bottom: 20px;
     border-bottom: 1px dotted #000000;
+}
+
+.blog-intro .text {
     max-height: 250px;
     overflow: hidden;
 }
 
 .footer {
     border-top: 1px solid black;
+    margin-top: 20px;
     margin-bottom: 40px;
     padding-top: 10px;
     text-align: center;
