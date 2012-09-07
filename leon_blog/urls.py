@@ -11,4 +11,7 @@ urlpatterns = patterns('',
     # blog
     url(r'^blog/(?P<year>\d{4})/(?P<month>\d{2})/(?P<slug>[-\w]+)/$', \
         'blog.views.post', name='leon_blog'),
+
+    # about
+    url(r'^about/$', 'blog.views.about'),
 )

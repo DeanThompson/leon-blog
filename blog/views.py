@@ -11,3 +11,8 @@ def post(request, year, month, slug):
     t = get_template('blog/post.html')
     c = RequestContext(request, locals())
     return HttpResponse(t.render(c))
+
+def about(request):
+    t = get_template('blog/about.html')
+    c = RequestContext(request, locals())
+    return HttpResponse(t.render(c))
