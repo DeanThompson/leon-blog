@@ -13,6 +13,9 @@ urlpatterns = patterns('',
         'blog.views.post', name='leon_blog'),
     url(r'^blogs/$', 'blog.views.blogs'),
 
+    # home
+    url(r'^home/$', 'blog.views.index'),
+
     # about
     url(r'^about/$', 'blog.views.about'),
 )

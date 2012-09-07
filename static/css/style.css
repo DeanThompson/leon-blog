@@ -80,6 +80,10 @@ body {
     margin-bottom: 10px;
 }
 
+.entry {
+    margin-bottom: 20px;
+}
+
 .description {
     margin: 5px 0;
     font-size: 0.9em;
@@ -110,13 +114,15 @@ body {
 
 .blog-intro {
     padding-bottom: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     border-bottom: 1px dotted #000000;
+    max-height: 250px;
+    overflow: hidden;
 }
 
 .footer {
     border-top: 1px solid black;
-    margin-top: 20px;
+    margin-bottom: 40px;
     padding-top: 10px;
     text-align: center;
 }

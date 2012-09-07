@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Home - Leon Young
+{% endblock %}
+
+{% block content %}
+    {% if posts_list %}
+        {% for post in posts_list %}
+            <div class="blog-intro">
+                <h3><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3>
+                <div class="description">
+                    <span class="blog-pub-time">Posted on {{ post.pub_date|date:"Y-m-d H:i" }}</span>
+                    <span class="blog-category">Category: <a href="#">{{ post.category }}</a></span>
+                    <span class="blog-tags">Tags:
+                    {% for t in post.tags.all %}
+                        <a href="#">{{ t }}</a> |
+                    {% endfor %}
+                    </span>
+                </div>
+                <div class="text">
+                    {{ post.content }}
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>There are no blogs.</p>
+    {% endif %}
+{% endblock %}
