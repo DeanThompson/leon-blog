@@ -14,7 +14,7 @@ urlpatterns = patterns('',
     url(r'^blogs/$', 'blog.views.blogs'),
 
     # home
-    url(r'^home/$', 'blog.views.index'),
+    url(r'^$', 'blog.views.index'),
 
     # about
     url(r'^about/$', 'blog.views.about'),

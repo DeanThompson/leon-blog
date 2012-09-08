@@ -40,7 +40,7 @@ body {
 
 .header a:hover {
     text-decoration: none;
-    color: #90ee90;
+    color: #A8141B;
 }
 
 .header span {
@@ -62,14 +62,25 @@ body {
     margin: auto;
 }
 
-.page a:hover {
-    background-color: yellow;
+.page a:hover, .footer a:hover {
+    background-color: #A8141B;
+    color: #ffffff;
 }
 
 .container {
     margin-top: 20px;
     line-height: 150%;
     font-size: 15px;
+}
+
+*::selection {
+    background: none repeat scroll 0 0 #3494C3;
+    color: #ffffff;
+}
+
+*::-moz-selection {
+    background: none repeat scroll 0 0 #3494C3;
+    color: #ffffff;
 }
 
 .main {
@@ -102,6 +113,12 @@ body {
 .description .blog-category {
     float: left;
     width: 250px;
+}
+
+.blogs-list ul li {
+    list-style-type: none;
+    margin-bottom: 5px;
+    overflow: hidden;
 }
 
 .side {

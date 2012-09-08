@@ -9,7 +9,7 @@ from models import Blog, Category
 
 
 class BlogAdmin(admin.ModelAdmin):
-    list_display = ('title', 'content', 'slug', 'pub_date', 'category',)
+    list_display = ('title', 'slug', 'pub_date', 'category',)
     search_fields = ('title', 'content',)
     list_filter = ('category',)
 

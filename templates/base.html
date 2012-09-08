@@ -18,7 +18,7 @@
             <span>给岁月以文明，而不是给文明以岁月</span>
         </div>
         <div class="nav">
-            <a href="/home">Home</a>
+            <a href="/">Home</a>
             <a href="/blogs">Blogs</a>
             <a href="/about">About</a>
         </div>
@@ -36,9 +36,16 @@
             <div class="side">
                 <div class="items">
                     <h3>Category</h3>
-                    <ul>
-
-                    </ul>
+                    {% if categories %}
+                        <ul>
+                            {% for category in categories %}
+                                <li>{{ category }}</li>
+                            {% endfor %}
+                            <li></li>
+                        </ul>
+                    {%  else %}
+                        No categories.
+                    {% endif %}
                 </div>
                 <div class="items">
                     <h3>Archive</h3>
@@ -51,7 +58,7 @@
                     <div class="tag-cloud"></div>
                 </div>
             </div>
-            <br style="clear:both;"/>
+            <div style="clear:both;"></div>
         </div>
     </div>
 
