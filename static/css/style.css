@@ -58,6 +58,7 @@ body {
 .nav a:hover {
     padding-bottom: 3px;
     border-bottom: 3px solid #A8141B;
+    borderbottom-radius: 5px;
 }
 
 .header, .nav, .container {
@@ -130,7 +131,7 @@ body {
 }
 
 .items {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .items h3 {
@@ -148,11 +149,16 @@ body {
 }
 
 .items .tag-cloud {
-    margin-top: 5px;
+    margin-top: 15px;
 }
 
 .items .tag-cloud a {
     margin-right: 10px;
+}
+
+.items .tag-cloud font:hover {
+    background-color: #A8141B;
+    color: #ffffff;
 }
 
 .blog-intro {

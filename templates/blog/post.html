@@ -12,7 +12,10 @@
             <span class="blog-category">分类: <a href="#">{{ post.category }}</a></span>
                     <span class="blog-tags">标签:
                         {% for t in post.tags.all %}
-                            <a href="#">{{ t }}</a> |
+                            <a href="#">{{ t }}</a>
+                            {% if not forloop.last %}
+                                |
+                            {% endif %}
                         {% endfor %}
                     </span>
         </div>

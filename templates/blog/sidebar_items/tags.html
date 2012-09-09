@@ -2,10 +2,14 @@
 {% get_tagcloud as tags %}
 
 <div class="items">
-    <h3>Tags</h3>
+    <h3>标签</h3>
     <div class="tag-cloud">
         {% for tag in tags %}
-            <a href="#"><span style="font-size: {{ tag.weight|floatformat:0 }}">{{ tag }}</span></a>
+            <a href="#" title="查看所有标签为 {{ tag }} 的文章">
+                <font size={{ tag.weight|floatformat:0 }}>
+                    {{ tag }} ({{ tag.num_times }})
+                </font>
+            </a>
         {% endfor %}
     </div>
 </div>

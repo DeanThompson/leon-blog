@@ -1,9 +1,11 @@
 <div class="items">
-    <h3>Category</h3>
+    <h3>分类</h3>
     {% if categories %}
         <ul>
             {% for category in categories %}
-                <li><a href="#">{{ category }} ({{ category.blogs.counts }})</a></li>
+                <li><a href="#" title="查看分类为 {{ category }} 的文章">
+                    {{ category }} ({{ category.blogs.count|default:0 }})
+                </a></li>
             {% endfor %}
         </ul>
     {%  else %}
