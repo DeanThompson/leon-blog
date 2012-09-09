@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    标签: {{ tag.name }} - Leon Young
+{% endblock %}
+
+{% block content %}
+    <div class="entry">
+        <h2>标签: {{ tag.name }}</h2>
+        {% include 'blog/include/_blog_list.html' %}
+    </div>
+{% endblock %}

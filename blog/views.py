@@ -6,6 +6,7 @@ from django.template import RequestContext
 from django.template.loader import get_template
 from django.core.paginator import Paginator
 
+from taggit.models import Tag
 
 from models import Blog, Category
 
@@ -21,7 +22,7 @@ def post(request, year, month, slug):
 
     post_link = request.get_host() + post.get_absolute_url()
 
-    return response(request, 'blog/post.html', locals())
+    return response(request, 'blog/blog.html', locals())
 
 
 def blogs(request):
@@ -43,6 +44,13 @@ def archive(request, year, month):
                                 pub_date__month=int(month))
 
     return response(request, 'blog/archive.html', locals())
+
+
+def tags(request, tag):
+    tag = get_object_or_404(Tag, name=tag)
+    posts_list = Blog.objects.filter(tags__name__in=[tag])
+
+    return response(request, 'blog/tag.html', locals())
 
 
 def about(request):

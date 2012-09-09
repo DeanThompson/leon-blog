@@ -22,6 +22,9 @@ urlpatterns = patterns('',
     # archive
     url(r'^archive/(?P<year>\d{4})/(?P<month>\d{1,2})/$', 'blog.views.archive'),
 
+    # tag
+    url(r'^tag/(?P<tag>[-\w]+)/$', 'blog.views.tags'),
+
     # about
     url(r'^about/$', 'blog.views.about'),
 )
