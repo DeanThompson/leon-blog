@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    Blogs List - Leon Young
+    归档：{{ archive }} - Leon Young
 {% endblock %}
 
 {% block content %}
     <div class="entry">
-        <h2>博客列表</h2>
+        <h2>归档：{{ archive }}</h2>
         {% include 'blog/_blog_list.html' %}
     </div>
 {% endblock %}

@@ -5,25 +5,27 @@
 {% endblock %}
 
 {% block content %}
-    <div class="category">
+    <div class="entry">
         <h2>分类：{{ category }}</h2>
-        {% if blogs %}
-            <ul>
-                {% for blog in blogs %}
-                    <li>
-                        <span style="float:left;">
-                            <a href="{{ blog.get_absolute_url }}" title="{{ post }}">
-                                {{ blog }}
-                            </a>
-                        </span>
-                        <span style="float:right;">
-                            {{ blog.pub_date|date:'Y-m-d' }}
-                        </span>
-                    </li>
-                {% endfor %}
-            </ul>
-        {% else %}
-            <p>该分类下没有文章。</p>
-        {% endif %}
+        <div class="blogs-list">
+            {% if blogs %}
+                <ul>
+                    {% for blog in blogs %}
+                        <li>
+                            <span style="float:left;">
+                                <a href="{{ blog.get_absolute_url }}" title="{{ post }}">
+                                    {{ blog }}
+                                </a>
+                            </span>
+                            <span style="float:right;">
+                                {{ blog.pub_date|date:'Y-m-d' }}
+                            </span>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>该分类下没有文章。</p>
+            {% endif %}
+        </div>
     </div>
 {% endblock %}

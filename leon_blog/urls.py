@@ -19,6 +19,9 @@ urlpatterns = patterns('',
     # category
     url(r'^category/(?P<slug>[-\w]+)/$', 'blog.views.category'),
 
+    # archive
+    url(r'^archive/(?P<year>\d{4})/(?P<month>\d{1,2})/$', 'blog.views.archive'),
+
     # about
     url(r'^about/$', 'blog.views.about'),
 )

@@ -1,9 +1,10 @@
 <div class="items">
     <h3>归档</h3>
     <ul>
-        {% for month_archive in month_archives reversed %}
-            <li><a href="#" title="查看 {{ month_archive|date:"Y F" }} 的文章">
-                {{ month_archive|date:"Y F" }}
+        {% for archive in archives reversed %}
+            <li>
+                <a href="{% url blog.views.archive archive.year archive.month %}" title="查看 {{ month_archive|date:"Y F" }} 的文章">
+                {{ archive|date:"Y F" }}
             </a></li>
         {% endfor %}
     </ul>

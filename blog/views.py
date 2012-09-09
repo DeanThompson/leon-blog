@@ -1,7 +1,10 @@
+# coding: utf-8
+
 from django.http import Http404, HttpResponse, HttpResponseRedirect
-from django.shortcuts import render_to_response, get_object_or_404
+from django.shortcuts import get_list_or_404, get_object_or_404
 from django.template import RequestContext
 from django.template.loader import get_template
+
 
 from models import Blog, Category
 
@@ -31,6 +34,13 @@ def category(request, slug):
     blogs = category.blogs.all()
 
     return response(request, 'blog/category.html', locals())
+
+def archive(request, year, month):
+    archive = year + u' 年 ' + month + u' 月'
+    posts_list = get_list_or_404(Blog, pub_date__year=int(year), \
+                                pub_date__month=int(month))
+
+    return response(request, 'blog/archive.html', locals())
 
 
 def about(request):

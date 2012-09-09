@@ -21,6 +21,6 @@ def categories():
 def archives():
     return {
         'template': "blog/sidebar_items/archives.html",
-        'month_archives': Blog.objects.dates('pub_date', 'month')[:12],
+        'archives': Blog.objects.dates('pub_date', 'month')[:12],
     }
     pass
