@@ -8,10 +8,6 @@ a {
     color: #3F72D8;
 }
 
-a:hover {
-    text-decoration: underline;
-}
-
 body {
     font-family: Georgia,Times,serif,"Microsoft YaHei";
     color: #555555;
@@ -25,6 +21,12 @@ body {
 .header-container a {
     color: #333333;
 }
+
+.header-container a:hover {
+    padding-bottom: 3px;
+    border-bottom: 3px solid #A8141B;
+}
+
 .header {
     height: 50px;
     padding: 5px 0;
@@ -135,7 +137,7 @@ body {
 }
 
 .blog-intro {
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     margin-bottom: 20px;
     border-bottom: 1px dotted #000000;
 }
@@ -143,6 +145,11 @@ body {
 .blog-intro .text {
     max-height: 250px;
     overflow: hidden;
+}
+
+.blog-intro .read-more {
+    margin-top: 10px;
+    text-align: right;
 }
 
 .footer {

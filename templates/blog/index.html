@@ -14,12 +14,18 @@
                     <span class="blog-category">Category: <a href="#">{{ post.category }}</a></span>
                     <span class="blog-tags">Tags:
                     {% for t in post.tags.all %}
-                        <a href="#">{{ t }}</a> |
+                        <a href="#">{{ t }}</a>
+                        {% if not forloop.last %}
+                            |
+                        {% endif %}
                     {% endfor %}
                     </span>
                 </div>
                 <div class="text">
                     {{ post.content|linebreaks }}
+                </div>
+                <div class="read-more">
+                    <a href="{{ post.get_absolute_url }}">阅读全文 &raquo;&raquo; </a>
                 </div>
             </div>
         {% endfor %}

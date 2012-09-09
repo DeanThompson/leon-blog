@@ -29,34 +29,14 @@
             <div class="main">
                 <div class="content">
                     {% block content %}
-                        页面内容
+                        博客内容
                     {% endblock %}
                 </div>
             </div>
             <div class="side">
-                <div class="items">
-                    <h3>Category</h3>
-                    {% if categories %}
-                        <ul>
-                            {% for category in categories %}
-                                <li>{{ category }}</li>
-                            {% endfor %}
-                            <li></li>
-                        </ul>
-                    {%  else %}
-                        No categories.
-                    {% endif %}
-                </div>
-                <div class="items">
-                    <h3>Archive</h3>
-                    <ul>
-
-                    </ul>
-                </div>
-                <div class="items">
-                    <h3>Tags</h3>
-                    <div class="tag-cloud"></div>
-                </div>
+                {% block sidebar %}
+                    {% include 'blog/sidebar.html' %}
+                {% endblock %}
             </div>
             <div style="clear:both;"></div>
         </div>
