@@ -8,9 +8,7 @@ from models import Blog, Category
 def index(request):
     posts_list = Blog.objects.all()
 
-    t = get_template('blog/index.html')
-    c = RequestContext(request, locals())
-    return HttpResponse(t.render(c))
+    return response(request, 'blog/index.html', locals())
 
 
 def post(request, year, month, slug):
@@ -19,29 +17,27 @@ def post(request, year, month, slug):
 
     post_link = request.get_host() + post.get_absolute_url()
 
-    t = get_template('blog/post.html')
-    c = RequestContext(request, locals())
-    return HttpResponse(t.render(c))
+    return response(request, 'blog/post.html', locals())
 
 
 def blogs(request):
     posts_list = Blog.objects.all()
 
-    t = get_template('blog/blogs.html')
-    c = RequestContext(request, locals())
-    return HttpResponse(t.render(c))
+    return response(request, 'blog/blogs.html', locals())
 
 
 def category(request, slug):
     category = get_object_or_404(Category, slug=slug)
     blogs = category.blogs.all()
 
-    t = get_template('blog/category.html')
-    c = RequestContext(request, locals())
-    return HttpResponse(t.render(c))
+    return response(request, 'blog/category.html', locals())
 
 
 def about(request):
-    t = get_template('blog/about.html')
-    c = RequestContext(request, locals())
+    return response(request, 'blog/about.html', locals())
+
+
+def response(request, template, args):
+    t = get_template(template)
+    c = RequestContext(request, args)
     return HttpResponse(t.render(c))
