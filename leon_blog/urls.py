@@ -16,6 +16,9 @@ urlpatterns = patterns('',
     # home
     url(r'^$', 'blog.views.index'),
 
+    # category
+    url(r'^category/(?P<slug>[-\w]+)/$', 'blog.views.category'),
+
     # about
     url(r'^about/$', 'blog.views.about'),
 )

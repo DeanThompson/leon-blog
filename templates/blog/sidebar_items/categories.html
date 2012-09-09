@@ -3,7 +3,7 @@
     {% if categories %}
         <ul>
             {% for category in categories %}
-                <li><a href="#" title="查看分类为 {{ category }} 的文章">
+                <li><a href="{% url blog.views.category category.slug %}" title="查看分类为 {{ category }} 的文章">
                     {{ category }} ({{ category.blogs.count|default:0 }})
                 </a></li>
             {% endfor %}

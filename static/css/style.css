@@ -96,8 +96,8 @@ body {
     margin-bottom: 20px;
 }
 
-.entry h2 {
-    margin-bottom: 10px;
+.entry h2, .category h2 {
+    margin-bottom: 20px;
 }
 
 .entry .perm-link {
@@ -119,7 +119,7 @@ body {
     width: 250px;
 }
 
-.blogs-list ul li {
+.blogs-list ul li, .category ul li {
     list-style-type: none;
     margin-bottom: 5px;
     overflow: hidden;

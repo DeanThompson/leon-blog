@@ -16,7 +16,9 @@ def index(request):
 def post(request, year, month, slug):
     post = get_object_or_404(Blog, slug=slug, pub_date__year=int(year), \
                                 pub_date__month=int(month))
+
     post_link = request.get_host() + post.get_absolute_url()
+
     t = get_template('blog/post.html')
     c = RequestContext(request, locals())
     return HttpResponse(t.render(c))
@@ -26,6 +28,15 @@ def blogs(request):
     posts_list = Blog.objects.all()
 
     t = get_template('blog/blogs.html')
+    c = RequestContext(request, locals())
+    return HttpResponse(t.render(c))
+
+
+def category(request, slug):
+    category = get_object_or_404(Category, slug=slug)
+    blogs = category.blogs.all()
+
+    t = get_template('blog/category.html')
     c = RequestContext(request, locals())
     return HttpResponse(t.render(c))
 
