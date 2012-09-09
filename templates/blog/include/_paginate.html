@@ -1,0 +1,11 @@
+<p style="text-align: center; margin-top: 20px;">
+{% if posts_list.has_previous %}
+    <span style="float:left;"><a href="?page={{ posts_list.previous_page_number }}">上一页</a></span>
+{% endif %}
+
+    <span>第 {{ posts_list.number }} 页, 共 {{ posts_list.paginator.num_pages }} 页</span>
+
+{% if posts_list.has_next %}
+    <span style="float:right;"><a href="?page={{ posts_list.next_page_number }}">下一页</a></span>
+{% endif %}
+</p>

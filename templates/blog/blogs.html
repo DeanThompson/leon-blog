@@ -7,6 +7,7 @@
 {% block content %}
     <div class="entry">
         <h2>博客列表</h2>
-        {% include 'blog/_blog_list.html' %}
+        {% include 'blog/include/_blog_list.html' %}
+        {% include 'blog/include/_paginate.html' %}
     </div>
 {% endblock %}

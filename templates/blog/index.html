@@ -32,6 +32,9 @@
                 </div>
             </div>
         {% endfor %}
+
+        {% include 'blog/include/_paginate.html' %}
+
     {% else %}
         <p>There are no blogs.</p>
     {% endif %}

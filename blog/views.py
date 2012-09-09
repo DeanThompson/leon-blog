@@ -4,13 +4,14 @@ from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_list_or_404, get_object_or_404
 from django.template import RequestContext
 from django.template.loader import get_template
+from django.core.paginator import Paginator
 
 
 from models import Blog, Category
 
 def index(request):
     posts_list = Blog.objects.all()
-
+    posts_list = pager(request, posts_list, 5)
     return response(request, 'blog/index.html', locals())
 
 
@@ -25,6 +26,7 @@ def post(request, year, month, slug):
 
 def blogs(request):
     posts_list = Blog.objects.all()
+    posts_list = pager(request, posts_list, 20)
 
     return response(request, 'blog/blogs.html', locals())
 
@@ -45,6 +47,22 @@ def archive(request, year, month):
 
 def about(request):
     return response(request, 'blog/about.html', locals())
+
+
+def pager(request, lst, num_per_page):
+    paginator = Paginator(lst, num_per_page)
+
+    try:
+        page = int(request.GET.get('page', '1'))
+    except ValueError:
+        page = 1
+
+    try:
+        lst = paginator.page(page)
+    except Exception:
+        lst = paginator.page(paginator.num_pages)
+
+    return lst
 
 
 def response(request, template, args):
