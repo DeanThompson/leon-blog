@@ -1,0 +1,11 @@
+{% load taggit_extras %}
+{% get_tagcloud as tags %}
+
+<div class="items">
+    <h3>Tags</h3>
+    <div class="tag-cloud">
+        {% for tag in tags %}
+            <a href="#"><span style="font-size: {{ tag.weight|floatformat:0 }}">{{ tag }}</span></a>
+        {% endfor %}
+    </div>
+</div>

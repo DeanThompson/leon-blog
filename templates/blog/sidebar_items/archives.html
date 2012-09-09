@@ -1,0 +1,9 @@
+<div class="items">
+    <h3>Archive</h3>
+    <ul>
+        {% for month_archive in month_archives reversed %}
+            <li><a href="#">{{ month_archive|date:"Y F" }}</a></li>
+        {% endfor %}
+
+    </ul>
+</div>

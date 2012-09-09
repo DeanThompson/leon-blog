@@ -22,10 +22,6 @@ body {
     color: #333333;
 }
 
-.header-container a:hover {
-    padding-bottom: 3px;
-    border-bottom: 3px solid #A8141B;
-}
 
 .header {
     height: 50px;
@@ -57,6 +53,11 @@ body {
 
 .nav a {
     margin-right: 20px;
+}
+
+.nav a:hover {
+    padding-bottom: 3px;
+    border-bottom: 3px solid #A8141B;
 }
 
 .header, .nav, .container {
@@ -134,6 +135,24 @@ body {
 
 .items h3 {
     border-bottom: 1px double #000000;
+}
+
+.items ul {
+    margin-left: 15px;
+    margin-top: 5px;
+}
+
+.items ul li {
+    list-style-type: square;
+    padding-left: 5px;
+}
+
+.items .tag-cloud {
+    margin-top: 5px;
+}
+
+.items .tag-cloud a {
+    margin-right: 10px;
 }
 
 .blog-intro {

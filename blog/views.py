@@ -7,7 +7,6 @@ from models import Blog, Category
 
 def index(request):
     posts_list = Blog.objects.all()
-    categories = Category.objects.all()
 
     t = get_template('blog/index.html')
     c = RequestContext(request, locals())

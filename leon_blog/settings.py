@@ -133,6 +133,7 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
 
     'taggit',
+    'taggit_templatetags',
 
     'blog',
 )

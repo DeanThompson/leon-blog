@@ -1,35 +1,10 @@
-<!-- Category -->
-<div class="items">
-    <h3>Category</h3>
-    {% if categories %}
-        <ul>
-            {% for category in categories %}
-                <li><a href="#">{{ category }} ({{ category.blogs.counts }})</a></li>
-            {% endfor %}
-        </ul>
-    {%  else %}
-        No categories.
-    {% endif %}
-</div>
+{% load customer_tags %}
+
+<!-- Categories -->
+{% categories %}
 
 <!-- Archive -->
-<div class="items">
-    <h3>Archive</h3>
-    <ul>
-        {% for month_archive in month_archives reversed %}
-            <li><a href="#">{{ month_archive|date:"F Y" }}</a></li>
-        {% endfor %}
-
-    </ul>
-</div>
+{% archives %}
 
 <!-- Tags -->
-<div class="items">
-    <h3>Tags</h3>
-    <div class="tag-cloud">
-        {% for tag in tags %}
-            <a href="#"><span style="font-size: {{ tag.weight|floatformat:0 }}">{{ tag }}</span></a>
-        {% endfor %}
-
-    </div>
-</div>
+{% include 'blog/sidebar_items/tags.html' %}
