@@ -2,16 +2,29 @@
 
 __author__ = 'leon'
 
-from django.db import models
 from django.contrib import admin
+from django import forms
 
-from models import Blog, Category
+from .models import Blog, Category
+from rte.kindeditor.widgets import KindEditor
+
+
+class MyBlogAdminForm(forms.ModelForm):
+    #content = forms.CharField(label="Content", widget=KindEditor(attrs={'row': 15, 'cols': 100}), required=True)
+
+    class Meta:
+        model = Blog
+        widgets = {
+            'content': KindEditor(attrs={'row': 15, 'cols': 100})
+        }
 
 
 class BlogAdmin(admin.ModelAdmin):
     list_display = ('title', 'slug', 'pub_date', 'category',)
     search_fields = ('title', 'content',)
     list_filter = ('category',)
+
+    form = MyBlogAdminForm
 
 
 class CategoryAdmin(admin.ModelAdmin):

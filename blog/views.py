@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from django.http import Http404, HttpResponse, HttpResponseRedirect
+from django.http import  HttpResponse
 from django.shortcuts import get_list_or_404, get_object_or_404
 from django.template import RequestContext
 from django.template.loader import get_template
@@ -8,7 +8,7 @@ from django.core.paginator import Paginator
 
 from taggit.models import Tag
 
-from models import Blog, Category
+from .models import Blog, Category
 
 def index(request):
     posts_list = Blog.objects.all()

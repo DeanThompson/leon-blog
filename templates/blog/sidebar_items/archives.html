@@ -3,7 +3,7 @@
     <ul>
         {% for archive in archives reversed %}
             <li>
-                <a href="{% url blog.views.archive archive.year archive.month %}" title="查看 {{ month_archive|date:"Y F" }} 的文章">
+                <a href="{% url blog.views.archive archive.year archive.month %}" title="查看 {{ archive|date:"Y F" }} 下的所有文章">
                 {{ archive|date:"Y F" }}
             </a></li>
         {% endfor %}
