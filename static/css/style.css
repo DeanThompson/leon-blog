@@ -119,6 +119,19 @@ body {
     width: 250px;
 }
 
+.text h3, .text h4 {
+    margin: 15px 0;
+}
+
+.text p {
+    margin-bottom: 10px;
+}
+
+.text blockquote {
+    padding-left: 4em;
+    margin-bottom: 10px;
+}
+
 .blogs-list ul li, .category ul li {
     list-style-type: none;
     margin-bottom: 5px;

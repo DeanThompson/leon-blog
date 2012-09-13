@@ -29,8 +29,9 @@ KindEditor.plugin('code', function(K) {
 				'<option value="cpp">C/C++</option>',
 				'<option value="cs">C#</option>',
 				'<option value="xml">XML</option>',
+                '<option value="sql">SQL</option>',
 				'<option value="bsh">Shell</option>',
-				'<option value="">Other</option>',
+				'<option value="plain">Other</option>',
 				'</select>',
 				'</div>',
 				'<textarea class="ke-textarea" style="width:408px;height:260px;"></textarea>',
@@ -46,7 +47,7 @@ KindEditor.plugin('code', function(K) {
 						var type = K('.ke-code-type', dialog.div).val(),
 							code = textarea.val(),
 							cls = type === '' ? '' :  ' lang-' + type,
-							html = '<pre class="prettyprint' + cls + '">\n' + K.escape(code) + '</pre> ';
+							html = '<pre class="prettyprint brush: '+ type + cls +'">\n' + K.escape(code) + '</pre> ';
 						self.insertHtml(html).hideDialog().focus();
 					}
 				}
