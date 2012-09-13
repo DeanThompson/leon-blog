@@ -8,13 +8,13 @@ class KindEditor(forms.Textarea):
 
     class Media:
         css = {
-            'all': (settings.MEDIA_URL + 'editor/kindeditor-4.0.1/themes/default/default.css',
-                    settings.MEDIA_URL + 'editor/kindeditor-4.0.1/plugins/code/prettify.css',),
+            'all': (settings.STATIC_URL + 'editor/kindeditor-4.0.1/themes/default/default.css',
+                    settings.STATIC_URL + 'editor/kindeditor-4.0.1/plugins/code/prettify.css',),
         }
 
         js = (
-            settings.MEDIA_URL + 'editor/kindeditor-4.0.1/kindeditor.js',
-            settings.MEDIA_URL + 'editor/kindeditor-4.0.1/plugins/code/prettify.js',
+            settings.STATIC_URL + 'editor/kindeditor-4.0.1/kindeditor.js',
+            settings.STATIC_URL + 'editor/kindeditor-4.0.1/plugins/code/prettify.js',
         )
 
     def __init__(self, attrs = {}):
@@ -25,6 +25,6 @@ class KindEditor(forms.Textarea):
         rendered = super(KindEditor, self).render(name, value, attrs)
         context = {
             'name': name,
-            'MEDIA_URL': settings.MEDIA_URL,
+            'STATIC_URL': settings.STATIC_URL,
         }
         return rendered + mark_safe(render_to_string('editor/kindeditor.html', context))
