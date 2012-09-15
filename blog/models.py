@@ -1,3 +1,5 @@
+# coding: utf-8
+
 from django.db import models
 
 from taggit.managers import TaggableManager
@@ -23,13 +25,13 @@ class Category(models.Model):
 
 
 class Blog(models.Model):
-    title = models.CharField(max_length=200)
-    content = models.TextField()
+    title = models.CharField("标题", max_length=200)
+    content = models.TextField("内容")
     slug = models.SlugField()   # more readable url
     category = models.ForeignKey(Category, related_name='blogs', blank=True, \
                     null=True, default=None, on_delete=models.SET_NULL)
-    tags = TaggableManager(blank=True)
-    pub_date = models.DateTimeField(default=datetime.now())
+    tags = TaggableManager("标签", blank=True)
+    pub_date = models.DateTimeField("发布时间", default=datetime.now())
 
     class Meta:
         ordering = ('-pub_date',)

@@ -22,7 +22,7 @@ class MyBlogAdminForm(forms.ModelForm):
 class BlogAdmin(admin.ModelAdmin):
     list_display = ('title', 'slug', 'pub_date', 'category',)
     search_fields = ('title', 'content',)
-    list_filter = ('category',)
+    list_filter = ('category', 'pub_date',)
 
     form = MyBlogAdminForm
 

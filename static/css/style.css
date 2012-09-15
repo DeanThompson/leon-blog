@@ -132,6 +132,15 @@ body {
     margin-bottom: 10px;
 }
 
+.text code {
+    background-color: #F8F8F8;
+    border: 1px solid #eaeaea;
+    border-radius: 3px 3px 3px 3px;
+    padding: 0 5px;
+    white-space: nowrap;
+    font-family: Consolas,"Liberation Mono",Courier,monospace;
+}
+
 .blogs-list ul li, .category ul li {
     list-style-type: none;
     margin-bottom: 5px;
