@@ -27,4 +27,7 @@ urlpatterns = patterns('',
 
     # about
     url(r'^about/$', 'blog.views.about'),
+
+    # comments
+    url(r'^comments/', include('django.contrib.comments.urls')),
 )

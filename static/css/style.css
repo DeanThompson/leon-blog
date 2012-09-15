@@ -32,8 +32,6 @@ body {
     font-size: 2.5em;
     font-weight: bold;
     text-align: center;
-    /*width: 300px;*/
-    /*float: left;*/
 }
 
 .header a:hover {
@@ -44,7 +42,6 @@ body {
 .header span {
     float: right;
     margin-top: 10px;
-    /*margin-right: 100px;*/
 }
 
 .nav {
@@ -58,7 +55,6 @@ body {
 .nav a:hover {
     padding-bottom: 3px;
     border-bottom: 3px solid #A8141B;
-    borderbottom-radius: 5px;
 }
 
 .header, .nav, .container {
@@ -93,7 +89,8 @@ body {
 }
 
 .entry {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+    border-bottom: 1px dotted #000000;
 }
 
 .entry h2 {
@@ -102,6 +99,7 @@ body {
 
 .perm-link {
     font-weight: bold;
+    margin: 20px 0;
 }
 
 .description {
@@ -197,6 +195,52 @@ body {
 .blog-intro .read-more {
     margin-top: 10px;
     text-align: right;
+}
+
+.comments .comment-head {
+    border-left: 5px #555555 solid;
+    padding: 5px 0 5px 20px;
+    margin: 10px 0;
+    background-color: #e6e6fa;
+}
+
+.comments .comment-form {
+    margin: 20px 0;
+    padding-bottom: 20px;
+    border-bottom: 1px dotted #000000;
+}
+
+.comments .comment-form p {
+    margin: 10px 0;
+}
+
+.comments .comment-form input {
+    width: 50%;
+    height: 25px;
+    margin-right: 20px;
+}
+
+.comments .comment-form input[type="submit"] {
+    width: 20%;
+    height: 35px;
+}
+
+.comments .comment-form textarea {
+    width: 99%;
+    height: 100px;
+}
+
+.comments-list .comment {
+    margin: 20px 0;
+}
+
+.comments-list .comment .comment-author {
+    background-color: #e6e6fa;
+    padding: 5px;
+}
+
+.comments-list .comment .comment-body {
+    margin-top: 10px;
 }
 
 .footer {

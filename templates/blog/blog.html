@@ -8,9 +8,13 @@
     <div class="entry">
         <h2>{{ post.title }}</h2>
         {% include 'blog/include/_blog.html' %}
+
+        <div class="perm-link">
+            转载请标明出处，本文永久链接: <a href="http://{{ post_link }}">{{ post_link }}</a>
+        </div>
     </div>
 
-    <div class="perm-link">
-        转载请标明出处，本文永久链接: <a href="http://{{ post_link }}">{{ post_link }}</a>
+    <div class="comments" id="comments">
+        {% include 'blog/include/_comments.html' %}
     </div>
 {% endblock %}

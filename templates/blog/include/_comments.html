@@ -1,0 +1,55 @@
+{% load comments %}
+
+{% get_comment_count for post as comment_count %}
+
+<div class="comment-head">
+    <h3>评论 ( <a href="#comments-list">{{ comment_count }}</a> )</h3>
+</div>
+
+<div class="comment-form">
+    {% get_comment_form for post as form %}
+    <form action="{% comment_form_target %}" method="post">
+        {% csrf_token %}
+        <p>
+            <input type="text" id="id_name" maxlength="50" name="name" placeholder="昵称">
+            <label for="id_name">昵称（必填）</label>
+        </p>
+        <p>
+            <input type="email" id="id_email" name="email" placeholder="邮箱">
+            <label for="id_email">邮箱（必填，不会公开）</label>
+        </p>
+        <p>
+            <input type="url" id="id_url" name="url" placeholder="个人主页">
+            <label for="id_url">个人主页（选填）</label>
+        </p>
+        <p>
+            <textarea name="comment" id="id_comment"></textarea>
+        </p>
+        {{ form.content_type }}
+        {{ form.object_pk }}
+        {{ form.timestamp }}
+        {{ form.security_hash }}
+        <p>
+            <input type="submit" name="submit" value="发表评论">
+        </p>
+    </form>
+</div>
+
+<div class="comments-list" id="comments-list">
+    {% get_comment_list for post as comment_list %}
+    {% for comment in comment_list %}
+        <div class="comment">
+            <div class="comment-author">
+                <span>
+                    <b><a href="{{ comment.user_url }}" target="_blank">
+                        {{ comment.user_name }}
+                    </a></b>
+                    发表于 {{ comment.submit_date|date:"Y-m-d H:i:s" }}
+                </span>
+            </div>
+            <div class="comment-body">
+                {{ comment.comment|safe|removetags:"button script input html body iframe option select" }}
+            </div>
+        </div>
+    {% endfor %}
+</div>
