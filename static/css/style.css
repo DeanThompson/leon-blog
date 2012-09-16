@@ -88,9 +88,9 @@ body {
     float: left;
 }
 
-.entry {
-    margin-bottom: 15px;
+#blog-entry {
     border-bottom: 1px dotted #000000;
+    margin-bottom: 15px;
 }
 
 h2 {
