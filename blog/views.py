@@ -22,6 +22,16 @@ def post(request, year, month, slug):
 
     post_link = request.get_host() + post.get_absolute_url()
 
+    try:
+        next_post = Blog.get_next_by_pub_date(post)
+    except Blog.DoesNotExist:
+        next_post = None
+
+    try:
+        previous_post = Blog.get_previous_by_pub_date(post)
+    except Blog.DoesNotExist:
+        previous_post = None
+
     return response(request, 'blog/blog.html', locals())
 
 

@@ -14,6 +14,24 @@
         </div>
     </div>
 
+    <p style="font-size: 0.8em;">
+        <span style="float:left;">上一篇：
+            {% if previous_post %}
+                <a href="{{ previous_post.get_absolute_url }}">{{ previous_post }}</a>
+            {% else %}
+                没有了
+            {% endif %}
+        </span>
+
+        <span style="float:right;">下一篇：
+            {% if next_post %}
+                <a href="{{ next_post.get_absolute_url }}">{{ next_post }}</a>
+            {% else %}
+                没有了
+            {% endif %}
+        </span>
+    </p>
+
     <div class="comments" id="comments">
         {% include 'blog/include/_comments.html' %}
     </div>
