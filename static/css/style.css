@@ -9,7 +9,7 @@ a {
 }
 
 body {
-    font-family: Georgia,Times,serif,"Microsoft YaHei";
+    font-family: Georgia,Times,"Bitstream Charter",serif,"Microsoft YaHei";
     color: #555555;
 }
 
@@ -218,10 +218,19 @@ h2 {
     margin: 10px 0;
 }
 
-.comments .comment-form input {
+.comments .comment-form input,
+.comments .comment-form textarea {
     width: 50%;
-    height: 25px;
+    height: 22px;
     margin-right: 20px;
+    border: 1px solid #889194;
+    border-radius: 5px;
+    padding: 2px 3px;
+}
+
+.comment-form input:focus,
+.comment-form textarea:focus {
+    border-color: #A8141B;
 }
 
 .comments .comment-form input[type="submit"] {
@@ -231,7 +240,7 @@ h2 {
 
 .comments .comment-form textarea {
     width: 99%;
-    height: 100px;
+    height: 150px;
 }
 
 .comments-list .comment {
