@@ -106,22 +106,31 @@ a:hover {
     margin: 5px 50px 15px 0;
 }
 
+.main a {
+    background-color: #F4F4F4;
+    padding: 0 3px;
+}
+
+.main a:hover {
+    color: #78e8a9;
+}
+
 #blog-entry {
-    border-bottom: 1px dotted #000000;
+    border-bottom: 2px solid #F4F4F4;
     margin-bottom: 15px;
 }
 
 .perm-link {
-    font-weight: bold;
-    margin: 20px 0;
+    margin: 10px 0;
 }
 
 .description {
-    margin: 5px 0 10px 0;
+    margin:  20px 0;
+    color: #bbbbbb;
     font-size: 0.9em;
 }
 
-.blog-pub-time {
+.pub-time {
     color: #78e8a9;
     font-family: "Din Display Pro Medium",Verdana,sans-serif;
 }
@@ -220,17 +229,10 @@ a:hover {
     margin-top: 80px;
 }
 
-.comments .comment-head {
-    border-left: 5px #555555 solid;
-    padding: 5px 0 5px 20px;
-    margin: 10px 0;
-    background-color: #e6e6fa;
-}
-
 .comments .comment-form {
     margin: 20px 0;
     padding-bottom: 20px;
-    border-bottom: 1px dotted #000000;
+    border-bottom: 1px dotted #F4F4F4;
 }
 
 .comments .comment-form p {
@@ -242,19 +244,27 @@ a:hover {
     width: 50%;
     height: 22px;
     margin-right: 20px;
-    border: 1px solid #889194;
+    border: 2px solid #F4F4F4;
     border-radius: 5px;
     padding: 2px 3px;
 }
 
 .comment-form input:focus,
 .comment-form textarea:focus {
-    border-color: #A8141B;
+    border-color: #78e8a9;
 }
 
 .comments .comment-form input[type="submit"] {
     width: 20%;
     height: 35px;
+    background-color: #F4F4F4;
+    font-size: 1.2em;
+}
+
+.comment-form input[type="submit"]:hover {
+    background-color: #78e8a9;
+    border-color: #78e8a9;
+    color: #ffffff;
 }
 
 .comments .comment-form textarea {
@@ -262,13 +272,17 @@ a:hover {
     height: 150px;
 }
 
+.comments-list {
+    border-bottom: 2px solid #F4F4F4;
+}
+
 .comments-list .comment {
     margin: 20px 0;
+    border-left: 2px solid #78e8a9;
+    padding-left: 20px;
 }
 
 .comments-list .comment .comment-author {
-    background-color: #e6e6fa;
-    padding: 5px;
 }
 
 .comments-list .comment .comment-body {

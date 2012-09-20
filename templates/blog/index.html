@@ -8,7 +8,7 @@
     {% if posts_list %}
         {% for post in posts_list %}
             <div class="blog-intro">
-                <span class="blog-pub-time">{{ post.pub_date|date:"Y-m-d H:i" }}</span>
+                <span class="pub-time">{{ post.pub_date|date:"Y-m-d H:i" }}</span>
                 <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
                 <div class="text">
                     {{ post.content|truncatechars:"250"|safe }}

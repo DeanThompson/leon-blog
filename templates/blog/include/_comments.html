@@ -3,8 +3,29 @@
 {% get_comment_count for post as comment_count %}
 
 <div class="comment-head">
-    <h3>评论 ( <a href="#comments-list">{{ comment_count }}</a> )</h3>
+    <h2>评论</h2>
 </div>
+
+{% get_comment_list for post as comment_list %}
+{% if comment_list %}
+<div class="comments-list" id="comments-list">
+    {% for comment in comment_list %}
+        <div class="comment">
+            <div class="comment-author">
+                <a href="{{ comment.user_url }}" target="_blank">
+                    {{ comment.user_name }}
+                </a>
+                <span class="pub-time" style="padding-left: 20px;">
+                    {{ comment.submit_date|date:"Y-m-d H:i:s" }}
+                </span>
+            </div>
+            <div class="comment-body">
+                {{ comment.comment|safe|removetags:"button script input html body iframe option select" }}
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endif %}
 
 <div class="comment-form">
     {% get_comment_form for post as form %}
@@ -33,23 +54,4 @@
             <input type="submit" name="submit" value="发表评论">
         </p>
     </form>
-</div>
-
-<div class="comments-list" id="comments-list">
-    {% get_comment_list for post as comment_list %}
-    {% for comment in comment_list %}
-        <div class="comment">
-            <div class="comment-author">
-                <span>
-                    <b><a href="{{ comment.user_url }}" target="_blank">
-                        {{ comment.user_name }}
-                    </a></b>
-                    发表于 {{ comment.submit_date|date:"Y-m-d H:i:s" }}
-                </span>
-            </div>
-            <div class="comment-body">
-                {{ comment.comment|safe|removetags:"button script input html body iframe option select" }}
-            </div>
-        </div>
-    {% endfor %}
 </div>
