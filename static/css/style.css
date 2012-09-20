@@ -71,6 +71,7 @@ body {
     float: right;
     font-size: 1.5em;
     margin-top: 30px;
+    text-transform: uppercase;
 }
 
 .nav a {
