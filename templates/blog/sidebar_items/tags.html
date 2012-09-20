@@ -2,7 +2,7 @@
 {% get_tagcloud as tags %}
 
 <div class="items">
-    <h3>标签</h3>
+    <h3>Tags</h3>
     <div class="tag-cloud">
         {% for tag in tags %}
             <a href="{% url blog.views.tags tag %}" title="查看标签为 {{ tag }} 的所有文章">

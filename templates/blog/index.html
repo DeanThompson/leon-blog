@@ -8,10 +8,10 @@
     {% if posts_list %}
         {% for post in posts_list %}
             <div class="blog-intro">
-                <h3><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3>
-                {% include 'blog/include/_blog.html' %}
-                <div class="read-more">
-                    <a href="{{ post.get_absolute_url }}">阅读全文 &raquo;&raquo; </a>
+                <span class="blog-pub-time">{{ post.pub_date|date:"Y-m-d H:i" }}</span>
+                <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+                <div class="text">
+                    {{ post.content|truncatechars:"250"|safe }}
                 </div>
             </div>
         {% endfor %}

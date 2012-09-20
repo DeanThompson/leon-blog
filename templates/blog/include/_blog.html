@@ -1,5 +1,7 @@
+<div class="text">
+    {{ post.content|safe }}
+</div>
 <div class="description">
-    <span class="blog-pub-time">发表于 {{ post.pub_date|date:"Y-m-d H:i" }}</span>
         <span class="blog-category">
             分类:
             <a href="{% url blog.views.category post.category.slug %}"
@@ -15,7 +17,4 @@
                 {% endif %}
             {% endfor %}
         </span>
-</div>
-<div class="text">
-    {{ post.content|safe }}
 </div>

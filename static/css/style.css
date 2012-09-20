@@ -1,3 +1,7 @@
+html {
+    background: url("../image/ce_1px_bkg.gif") repeat scroll 0 0 transparent;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,74 +9,14 @@
 
 a {
     text-decoration: none;
-    color: #3F72D8;
-}
-
-body {
-    font-family: Georgia,Times,"Bitstream Charter",serif,"Microsoft YaHei";
     color: #555555;
 }
 
-.header-container {
-    border-bottom: 1px solid #000000;
-    padding-bottom: 10px;
+h1, h2, h3, h4 {
+    margin-bottom: 10px;
+    color: #000000;
 }
-
-.header-container a {
-    color: #333333;
-}
-
-
-.header {
-    height: 50px;
-    padding: 5px 0;
-}
-
-.header h1 {
-    font-size: 2.5em;
-    font-weight: bold;
-    text-align: center;
-}
-
-.header a:hover {
-    text-decoration: none;
-    color: #A8141B;
-}
-
-.header span {
-    float: right;
-    margin-top: 10px;
-}
-
-.nav {
-    font-size: 1.5em;
-}
-
-.nav a {
-    margin-right: 20px;
-}
-
-.nav a:hover {
-    padding-bottom: 3px;
-    border-bottom: 3px solid #A8141B;
-}
-
-.header, .nav, .container {
-    width: 960px;
-    margin: auto;
-}
-
-.page a:hover, .footer a:hover {
-    background-color: #A8141B;
-    color: #ffffff;
-}
-
-.container {
-    margin-top: 20px;
-    line-height: 150%;
-    font-size: 15px;
-}
-
+/*
 *::selection {
     background: none repeat scroll 0 0 #3494C3;
     color: #ffffff;
@@ -82,19 +26,89 @@ body {
     background: none repeat scroll 0 0 #3494C3;
     color: #ffffff;
 }
+*/
+body {
+    font-family: "Palatino","Georgia","Hiragino Mincho ProN","Microsoft YaHei","WenQuanYi Micro Hei",serif;
+    color: #555555;
+    margin: 0;
+}
+
+.header-container, .page, .footer {
+    width: 960px;
+    margin: auto;
+}
+
+.header-container {
+    margin: 30px auto;
+}
+
+.header-container a {
+    color: #555555;
+}
+
+.header {
+    width: 300px;
+    float: left;
+}
+
+.header h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+.header .sub-title {
+    font-size: 1.2em;
+    padding-left: 10px;
+}
+
+.header a:hover {
+    text-decoration: none;
+    background-color: transparent;
+    color: #555555;
+}
+
+.nav {
+    float: right;
+    font-size: 1.5em;
+    margin-top: 30px;
+}
+
+.nav a {
+    margin-left: 40px;
+    padding: 15px 30px;
+    background-color: #ffffff;
+}
+
+a:hover {
+    background-color: #78e8a9;
+    color: #ffffff;
+}
+
+.container {
+    line-height: 150%;
+    font-size: 15px;
+}
 
 .main {
-    width: 650px;
+    background: none repeat scroll 0 0 #FFFFFF;
+    width: 630px;
     float: left;
+    padding: 15px;
+}
+
+.main h2 a:hover, .main h3 a:hover {
+    border-bottom: 2px solid #2d2d2d;
+    background-color: transparent;
+    color: #2d2d2d;
+}
+
+.main h2 {
+    margin: 5px 50px 15px 0;
 }
 
 #blog-entry {
     border-bottom: 1px dotted #000000;
     margin-bottom: 15px;
-}
-
-h2 {
-    margin-bottom: 20px;
 }
 
 .perm-link {
@@ -107,9 +121,9 @@ h2 {
     font-size: 0.9em;
 }
 
-.description .blog-pub-time {
-    float: left;
-    width: 200px;
+.blog-pub-time {
+    color: #78e8a9;
+    font-family: "Din Display Pro Medium",Verdana,sans-serif;
 }
 
 .description .blog-category {
@@ -146,7 +160,7 @@ h2 {
 }
 
 .side {
-    width: 250px;
+    width: 270px;
     float: right;
 }
 
@@ -155,7 +169,17 @@ h2 {
 }
 
 .items h3 {
-    border-bottom: 1px double #000000;
+    background: url("../image/separator_sm.png") no-repeat scroll center center transparent;
+    text-align: center;
+    color: #ffffff;
+    display: block;
+    height: 30px;
+    font-size: 14px;
+    font-weight: normal;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding-top: 7px;
+    margin-bottom: 10px;
 }
 
 .items ul {
@@ -184,17 +208,12 @@ h2 {
 .blog-intro {
     padding-bottom: 10px;
     margin-bottom: 20px;
-    border-bottom: 1px dotted #000000;
+    border-bottom: 2px solid #F4F4F4;
 }
 
 .blog-intro .text {
     max-height: 250px;
     overflow: hidden;
-}
-
-.blog-intro .read-more {
-    margin-top: 10px;
-    text-align: right;
 }
 
 .comments {
