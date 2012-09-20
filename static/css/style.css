@@ -106,18 +106,33 @@ a:hover {
     margin: 5px 50px 15px 0;
 }
 
-.main a {
+.main p a {
     background-color: #F4F4F4;
     padding: 0 3px;
 }
 
-.main a:hover {
+.main p a:hover {
     color: #78e8a9;
 }
 
 #blog-entry {
     border-bottom: 2px solid #F4F4F4;
     margin-bottom: 15px;
+}
+
+.comments-link {
+    background: url("../image/comment_bubble.png") no-repeat scroll center top;
+    float: right;
+    height: 34px;
+    width: 40px;
+    margin: 20px 10px 0 0;
+    padding-top: 3px;
+    text-align: center;
+}
+
+.comments-link:hover {
+    background-position: center -36px;
+    background-color: transparent;
 }
 
 .perm-link {
@@ -149,8 +164,8 @@ a:hover {
 }
 
 .text blockquote {
-    padding-left: 4em;
-    margin-bottom: 10px;
+    padding-left: 1em;
+    border-left: 2px solid #78e8a9;
 }
 
 .text code {
@@ -174,7 +189,7 @@ a:hover {
 }
 
 .items {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
 .items h3 {
@@ -192,13 +207,12 @@ a:hover {
 }
 
 .items ul {
-    margin-left: 15px;
-    margin-top: 5px;
+    margin-top: 15px;
+    margin-left: 10px;
 }
 
 .items ul li {
-    list-style-type: square;
-    padding-left: 5px;
+    list-style-type: none;
 }
 
 .items .tag-cloud {
@@ -210,7 +224,7 @@ a:hover {
 }
 
 .items .tag-cloud font:hover {
-    background-color: #A8141B;
+    background-color: #78e8a9;
     color: #ffffff;
 }
 

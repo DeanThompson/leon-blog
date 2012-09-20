@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load comments %}
 
 {% block title %}
     Home - Leon Young
@@ -7,8 +8,12 @@
 {% block content %}
     {% if posts_list %}
         {% for post in posts_list %}
+            {% get_comment_count for post as comment_count %}
             <div class="blog-intro">
                 <span class="pub-time">{{ post.pub_date|date:"Y-m-d H:i" }}</span>
+                <a class="comments-link" href="{{ post.get_absolute_url }}#comments" title="查看评论">
+                    {{ comment_count }}
+                </a>
                 <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
                 <div class="text">
                     {{ post.content|truncatechars:"250"|safe }}

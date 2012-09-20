@@ -1,9 +1,14 @@
+{% load comments %}
+{% get_comment_count for post as comment_count %}
+
 <span class="pub-time">{{ post.pub_date|date:"Y-m-d H:i" }}</span>
+<a class="comments-link" href="#comments" title="查看评论">{{ comment_count }}</a>
 <h2>{{ post.title }}</h2>
 <div class="text">
     {{ post.content|safe }}
 </div>
 <div class="description">
+    <p>
         <span class="blog-category">
             分类:
             <a href="{% url blog.views.category post.category.slug %}"
@@ -19,4 +24,5 @@
                 {% endif %}
             {% endfor %}
         </span>
+    </p>
 </div>
