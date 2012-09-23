@@ -20,7 +20,7 @@ class Category(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return 'leon_category', None, {'category': self.slug}
+        return 'leon_category', None, {'slug': self.slug}
     get_absolute_url = models.permalink(get_absolute_url)
 
 
